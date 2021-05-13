@@ -1,1 +1,46 @@
 @import 'semantic-ui-css/semantic.min.css';
+
+/* Commons */
+
+.flex {
+    display: flex;
+}
+
+.flex-sides {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-sides p {
+    margin: 0;
+}
+.flex-center { 
+    align-items: center;
+}
+
+/* General */
+
+.slick-slide {
+    height: 7rem;
+    margin-right: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px 2px rgb(0 0 0 / 5%);
+    transform: translate(0,-2px);
+    background-color: #f1f2f3;
+}
+
+.category-item {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f2f3;
+}
+.category-item p {
+    text-align: center;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-around;
+}
