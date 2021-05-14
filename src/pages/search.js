@@ -1,5 +1,5 @@
 import React , { useState , useEffect} from "react";
-import { Container, Header , Menu, Search, Card, Icon, Image } from "semantic-ui-react";
+import {Divider, Container, Header , Menu, Search, Card, Icon, Image, Button } from "semantic-ui-react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateSession } from "../redux/reducers/session";
 import { BASE_URL } from "../constants";
@@ -37,8 +37,12 @@ function Filter() {
     return(
         <section className="filter">
             <div>
-                <h3>Filtros en: {categorySelected}</h3>  
-                <Search />              
+                <p>Filtros en: <h3>{categorySelected}</h3></p>  
+                <Button basic color='blue' content='Blue' fluid>Categoria: {categorySelected}</Button>
+                <Divider/>
+                <Button basic color='blue' content='Blue' fluid>Precio</Button>
+                <Divider/>
+                <Button basic color='blue' content='Blue' fluid>Publicado hace</Button>
             </div>
         </section>
     )
@@ -62,7 +66,7 @@ function CreateCard({data}){
         <Card >
             <Image src='https://i.picsum.photos/id/974/200/200.jpg?hmac=3skiM35hn9GtUF77ruZWI1mTtIROBBhkDIOmGwS7kpY' wrapped ui={false}  />
             <Card.Content>
-                <Card.Header as='h4'>{data.title}</Card.Header>
+                <Card.Header className="card-title" as='h4'>{data.title}</Card.Header>
                 <p>{data.description}</p>
                 <div className="card-footer">
                     <Icon color="red" size="large" name="like" />
@@ -91,9 +95,12 @@ function HeaderSearch() {
                                 <SignIn />
                             </>
                         ) : (
-                            <>
-                                <p>Bienvenido, <i>{session.userInfo.name}</i>, </p>
-                            </>
+                            <div className="flex flex-center">
+                                <p className="mg-right">Bienvenido, <i>{session.userInfo.name}</i> </p>
+                                <Button positive>
+                                    Subir producto
+                                </Button>
+                            </div>
                         )
                     }
                 </Menu.Item>

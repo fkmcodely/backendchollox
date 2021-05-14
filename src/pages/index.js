@@ -2,7 +2,7 @@ import React, { useState , useEffect } from "react";
 import Register from "../Components/Modal/Register";
 import SignIn from "../Components/Modal/SignIn";
 import { useSelector } from "react-redux";
-import { Container , Header, Button , Search } from 'semantic-ui-react'
+import { Container , Header, Button , Search , Divider } from 'semantic-ui-react'
 import CategoryList from "../Components/CategoryList";
 import { BASE_URL } from "../constants";
 
@@ -34,9 +34,12 @@ export default function IndexPage({ openModalRegister }) {
                                     <SignIn />
                                 </>
                             ) : (
-                                <>
-                                    <p>Bienvenido, {session.userInfo.name}, </p>
-                                </>
+                                <div className="flex flex-center "> 
+                                    <p className="mg-right">Bienvenido, {session.userInfo.name} </p>
+                                    <Button positive circular icon='settings' >
+                                        Subir producto
+                                    </Button>
+                                </div>
                             )
                         }
                     </div>

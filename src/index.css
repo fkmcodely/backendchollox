@@ -52,3 +52,15 @@ code {
 .product-list .card .image {
   height: 70%;
 }
+
+.card-title {
+  margin-bottom: 0px !important;
+}
+
+.mg-right {
+  margin-right: 1rem !important;
+}
+
+.mg-right  {
+  margin: 0;
+}
