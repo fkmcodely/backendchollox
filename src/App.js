@@ -1,6 +1,7 @@
-import './App.css';
+import './App.scss';
 import IndexPage from "./pages/index";
 import SearchView from "./pages/search";
+import Upload from "./pages/upload";
 import React  from "react"
 import {
   BrowserRouter as Router,
@@ -18,6 +19,9 @@ function App() {
         </Route>
         <Route path="/busqueda">
           <SearchView />
+        </Route>
+        <Route path="/catalogo">
+          <Upload />
         </Route>
       </Switch>
     </Router>

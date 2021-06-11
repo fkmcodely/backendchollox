@@ -1,0 +1,21 @@
+.block {
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid #eceff1;
+    padding: 20px;
+    margin-bottom: 20px;
+    &__middle {
+        width: 60%;
+    }
+    &__subtitle {
+        margin-bottom: 20px;
+    }
+}
+
+.block-title {
+    font-size: 14px;
+}
+
+.block-subtitle {
+    font-size: 10px !important;
+}
