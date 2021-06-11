@@ -3,9 +3,11 @@ import { useDispatch , useSelector } from "react-redux";
 import { Card, Icon, Image , Grid} from 'semantic-ui-react'
 import { setTypeProductUpload } from "../redux/reducers/upload";
 import '../styles/block.scss';
+import '../styles/utils.scss';
 
 function SelectCategory(props) {
     const dispatch = useDispatch();
+    const idSelected = useSelector(state => state.upload.categorySelected);
 
     const categoryList = [
         {
@@ -42,7 +44,7 @@ function SelectCategory(props) {
     const generateCategoryCard = () => (
         categoryList.map((category,index) => (
             <Grid.Column>
-                <Card onClick={() => {updateUploadCategorySelected(category.id)}}>
+                <Card className={`${idSelected === category.id && ('card-selected')}`} onClick={() => {updateUploadCategorySelected(category.id)}}>
                     <Card.Content>
                         <Card.Header className="block-subtitle">{category.title}</Card.Header>
                     </Card.Content>
