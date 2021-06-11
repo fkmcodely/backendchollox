@@ -8,6 +8,11 @@ router.get('/product/getAll', function(req, res, next) {
   controller.findAllProducts();
 });
 
+router.get('/category/getall',(req,res,next) => {
+  const controller = new CategoryController(req,res,next);
+  controller.getAllCategories();
+});
+
 router.post('/product/create', function(req, res, next) {
   const controller = new BasicProductController(req,res,next);
   controller.addProduct();
@@ -23,9 +28,6 @@ router.post('/category/create',(req,res,next) => {
   controller.addCategory();
 });
 
-router.get('/category/getall',(req,res,next) => {
-  const controller = new CategoryController(req,res,next);
-  controller.getAllCategories();
-});
+
 
 module.exports = router;

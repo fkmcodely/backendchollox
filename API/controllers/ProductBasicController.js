@@ -25,7 +25,7 @@ class ProductBasicController extends controller {
         });
         product.save((err,product) => {
             if(err) return res.status(500).send(err.message);
-            this.res.send(200);
+            this.res.send(product);
         });
     }
 

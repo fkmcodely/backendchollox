@@ -9,11 +9,12 @@ class CategoryController extends Controller {
     }
 
     addCategory = () => {
-        const { name , description } = this.req.body;
+        const { name , description, iconName } = this.req.body;
         let category = new categorySchema({
             id: uuidv4(),
             name: name,
             description: description,
+            iconName: iconName
         });
         category.save((err,product) => {
             if(err) return res.status(500);

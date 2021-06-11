@@ -1,15 +1,21 @@
 var createError = require('http-errors');
 var express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
+const bodyParser = require('body-parser');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const bp = require('body-parser')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 const connection = 'mongodb+srv://kevin:kevin@cluster0.04rqq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 var app = express();
+app.use(cors());
+app.use(express.json());
+
 mongoose.connect(connection, (err,res) => {
   if(err) console.log('Error de conexion con bbdd');
   console.log('Conexión satisfactoria.');

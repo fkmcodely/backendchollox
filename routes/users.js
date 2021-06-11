@@ -8,9 +8,14 @@ router.post('/create', function(req, res, next) {
   userController.createUser();
 });
 
-router.post('/getall', function(req, res, next) {
+router.post('/signin',(req,res,next) => {
   const userController = new UserController(req,res,next);
-  userController.getUsers();
+  userController.signInUser();
+});
+
+router.post('/getall', async function(req, res, next) {
+  const userController = new UserController(req,res,next);
+  await userController.getUsers();
 });
 
 module.exports = router;
